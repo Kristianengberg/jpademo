@@ -23,6 +23,10 @@ public class DogController {
         this.ownerService = ownerService;
     }
 
+    public DogController(){
+
+    }
+
 
     @RequestMapping(value = "/dogs/login", method = RequestMethod.POST)
     public String login(@RequestParam("username") String usr,
@@ -85,5 +89,9 @@ public class DogController {
     public String addDog(Dog dog){
         dogService.save(dog);
         return "redirect:/dogs";
+    }
+
+    public int test(){
+        return 4;
     }
 }
